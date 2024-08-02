@@ -23,4 +23,4 @@ these skills are the top most paying skills. This may be because of the differen
 in software being used. This is also because of the number of people or companies
 that require these skills have reduced a lot in the past years, while programs
 like r, looker, snowflake are newer and more adopted in recent times. 
-R is quite popular in Canada in particular */
+R is quite popular in Canada in particular*/

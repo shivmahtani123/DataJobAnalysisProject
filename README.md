@@ -16,8 +16,11 @@ SQL queries: [project_sql](/project_sql/)
 5. What are the most optimal skills to learn for Data/Business Analysts in Canada based on salary and demand?
 
 ## Tools
-List the tools and technologies used in the project. This could include software, programming languages, libraries, and any other resources.
-
+- SQL - The dominant tool I used to clean, sort, reference, analyze and extract critical information from the database
+- PostgreSQL - The database management system of choice to process the large dataset
+- Power BI - The visualization software I used
+- Git & GitHub - To manage my project and repository
+- Visual Studio Code - The efficient and user-friendly editor I used
 ## Analysis
 Detail the methods and procedures used in the project. Explain the data analysis process, algorithms implemented, and any experiments conducted.
 
