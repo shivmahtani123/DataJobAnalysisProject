@@ -8,10 +8,11 @@ WITH skills_demand AS (
     INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE
-        job_title_short IN('Data Analyst','Business Analyst') AND 
-        salary_year_avg IS NOT NULL AND 
-        (job_country = 'Canada' OR 
-        job_work_from_home = TRUE)
+        job_title_short IN('Data Analyst') AND
+        salary_year_avg IS NOT NULL AND
+        (job_country = 'Canada'
+        OR job_country = 'India' OR job_work_from_home = TRUE) AND
+        job_no_degree_mention = TRUE
     GROUP BY
         skills_dim.skill_id
 ), average_salary AS (
@@ -23,10 +24,11 @@ WITH skills_demand AS (
     INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE
-        job_title_short IN('Data Analyst','Business Analyst') AND 
-        salary_year_avg IS NOT NULL AND 
-        (job_country = 'Canada' OR 
-        job_work_from_home = TRUE)
+        job_title_short IN('Data Analyst') AND
+        salary_year_avg IS NOT NULL AND
+        (job_country = 'Canada'
+        OR job_country = 'India' OR job_work_from_home = TRUE) AND
+        job_no_degree_mention = TRUE
     GROUP BY
         skills_dim.skill_id
 )
@@ -40,7 +42,9 @@ FROM
     skills_demand
 INNER JOIN
     average_salary ON skills_demand.skill_id = average_salary.skill_id
+WHERE
+    demand_count > 10
 ORDER BY
-    demand_count DESC,
-    avg_salary DESC
+    avg_salary DESC,
+    demand_count DESC
 LIMIT 25;

@@ -5,15 +5,15 @@ FROM
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
-    job_title_short IN('Data Analyst','Business Analyst') AND 
-    (job_country = 'Canada' 
-    OR job_work_from_home = TRUE)
+    job_title_short IN('Data Analyst') AND
+    (job_country = 'Canada'
+    OR job_country = 'India' OR job_work_from_home = TRUE) AND
+    job_no_degree_mention = TRUE
 GROUP BY
     skills
 ORDER BY
     COUNT(*) DESC
 LIMIT 10;
-
 
 
 
