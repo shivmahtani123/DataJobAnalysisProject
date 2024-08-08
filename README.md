@@ -57,6 +57,7 @@ ORDER BY
 LIMIT 10;
 ```
 ### Insights
+![TopPayingJobsBySalary](DataJobAnalysisProject/Assets/TopPayingJobsBySalary.png)
 
 
 ## Conclusion
