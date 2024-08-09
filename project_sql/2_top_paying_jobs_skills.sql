@@ -3,9 +3,6 @@ WITH top_paying_jobs AS(SELECT
     company_dim.name as "Company Name",
     job_title_short,
     job_title, 
-    job_location,
-    job_no_degree_mention,
-    job_work_from_home,
     salary_year_avg
 FROM
     job_postings_fact
